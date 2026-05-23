@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavSmart | SIH Finalist</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+            margin-bottom: 3rem;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 0 auto;
+            max-width: 600px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: var(--accent);
+        }
+
+        /* --- THE LIVE PREVIEW CSS MAGIC --- */
+        .preview-container {
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            position: relative;
+            background-color: #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .preview-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 400%;  /* Render the site 4x wider */
+            height: 400%; /* Render the site 4x taller */
+            border: none;
+            transform: scale(0.25); /* Shrink it down to fit the box perfectly */
+            transform-origin: top left;
+            pointer-events: none; /* Prevents scrolling inside the thumbnail */
+        }
+        /* --------------------------------- */
+
+        .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card h2 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            margin: 0;
+            flex-grow: 1;
+            font-size: 0.95rem;
+        }
+
+        .launch-text {
+            display: block;
+            margin-top: 1.25rem;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="badge">Smart India Hackathon Finalist</div>
+        <h1>NavSmart Ecosystem</h1>
+        <p>Automated Bus Scheduling and Route Management System engineered for the Delhi Transport Corporation (DTC).</p>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            
+            <a href="https://navsmart-admin-portal.vercel.app/" class="card" target="_blank" rel="noopener noreferrer">
+                <div class="preview-container">
+                    <iframe class="preview-iframe" src="https://navsmart-admin-portal.vercel.app/" scrolling="no"></iframe>
+                </div>
+                <div class="card-content">
+                    <h2>Admin Portal</h2>
+                    <p>Centralized command center for managing vehicles, staff, routes, and monitoring live GIS overlaps.</p>
+                    <span class="launch-text">Launch Portal &rarr;</span>
+                </div>
+            </a>
+
+            <a href="https://navsmart-everything-portal.vercel.app/#/" class="card" target="_blank" rel="noopener noreferrer">
+                <div class="preview-container">
+                    <iframe class="preview-iframe" src="https://navsmart-everything-portal.vercel.app/#/" scrolling="no"></iframe>
+                </div>
+                <div class="card-content">
+                    <h2>Passenger Portal</h2>
+                    <p>Public web application for passengers to search routes, book tickets, and generate digital QR codes.</p>
+                    <span class="launch-text">Launch Portal &rarr;</span>
+                </div>
+            </a>
+
+            <a href="https://navsmart-driver-portal.vercel.app/" class="card" target="_blank" rel="noopener noreferrer">
+                <div class="preview-container">
+                    <iframe class="preview-iframe" src="https://navsmart-driver-portal.vercel.app/" scrolling="no"></iframe>
+                </div>
+                <div class="card-content">
+                    <h2>Driver Portal</h2>
+                    <p>Mobile interface for drivers to initiate linked/unlinked laps and follow live map navigation via OSRM.</p>
+                    <span class="launch-text">Launch Portal &rarr;</span>
+                </div>
+            </a>
+
+            <a href="https://navsmart-conductor-portal.vercel.app/" class="card" target="_blank" rel="noopener noreferrer">
+                <div class="preview-container">
+                    <iframe class="preview-iframe" src="https://navsmart-conductor-portal.vercel.app/" scrolling="no"></iframe>
+                </div>
+                <div class="card-content">
+                    <h2>Conductor Portal</h2>
+                    <p>Mobile tool utilizing device cameras to scan passenger QR codes and issue manual tickets dynamically.</p>
+                    <span class="launch-text">Launch Portal &rarr;</span>
+                </div>
+            </a>
+
+            <a href="https://navsmart-bus-stop-portal.vercel.app/" class="card" target="_blank" rel="noopener noreferrer">
+                <div class="preview-container">
+                    <iframe class="preview-iframe" src="https://navsmart-bus-stop-portal.vercel.app/" scrolling="no"></iframe>
+                </div>
+                <div class="card-content">
+                    <h2>Bus Stop Signage</h2>
+                    <p>Unattended digital signage auto-polling real-time ETA and status to waiting passengers.</p>
+                    <span class="launch-text">Launch Portal &rarr;</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>
