@@ -1,10 +1,10 @@
-# 🚍 NavSmart: Smart Public Transit Ecosystem
+# NavSmart: Smart Public Transit Ecosystem
 
 NavSmart is a comprehensive, multi-portal smart public transit management system. It coordinates real-time bus tracking, automated scheduling, mobile ticketing, and driver/conductor operations into a single unified platform.
 
 The entire system is powered by a centralized Node.js/Express backend that acts as an API gateway over a Supabase PostgreSQL database, with distinct Vue 3/Quasar frontends tailored for different user roles (admins, drivers, conductors, and passengers).
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```mermaid
 flowchart TD
@@ -32,20 +32,20 @@ flowchart TD
 
 ```
 
-## 📦 The Micro-Repositories
+## The Micro-Repositories
 
-This ecosystem is divided into specialized repositories based on user roles and hardware requirements.
+This ecosystem is divided into specialized client applications. You can test the live deployments below.
 
-| Portal / Service | Primary Role | Core Tech Stack |
-| --- | --- | --- |
-| **Admin Portal** | The centralized command center for transit administrators to manage vehicles, staff, routes, schedules, and monitor active trips on a live map. | Vue 3, Quasar, Leaflet, Chart.js |
-| **Backend API** | The core API server (Express.js) that enforces business logic, handles custom JWT authentication, and acts as the secure intermediary between the client portals and the Supabase database. | Node.js, Express, bcryptjs, jwt |
-| **Driver Portal** | A mobile-first app for drivers to view assigned upcoming laps, start/end active trips, and see the exact route polyline drawn on a map using Open Source Routing Machine (OSRM). | Vue 3, Quasar, vue-leaflet, OSRM |
-| **Conductor Portal** | A mobile-first app for bus conductors to issue manual tickets dynamically, track trip occupancy, and scan/validate passenger QR code tickets via device cameras. | Vue 3, Quasar, vue3-qrcode-reader |
-| **Passenger Portal** | The consumer-facing web application where passengers can search for routes, book tickets, process simulated payments, and generate digital QR tickets. | Vue 3, Quasar, vue3-qrcode-reader |
-| **Bus Stop Signage** | A digital signage application designed for public bus stops, continuously polling the backend to display arriving buses and live trip statuses to waiting passengers. | Vue 3, Quasar, Pinia |
+| Portal | Primary Role | Live Link |
+| :--- | :--- | :--- |
+| **Admin Portal** | Command center for transit administrators to manage data and monitor live maps. | [navsmart-admin-portal.vercel.app](https://navsmart-admin-portal.vercel.app/) |
+| **Customer Portal** | Passenger web app for journey planning and QR ticket generation. | [navsmart-everything-portal.vercel.app](https://navsmart-everything-portal.vercel.app/#/) |
+| **Driver Portal** | App for drivers to start trips and view exact route polylines. | [navsmart-driver-portal.vercel.app](https://navsmart-driver-portal.vercel.app/) |
+| **Conductor Portal** | App for conductors to issue tickets and scan passenger QR codes. | [navsmart-conductor-portal.vercel.app](https://navsmart-conductor-portal.vercel.app/) |
+| **Bus Stop Signage** | Digital signage that auto-polls the API to display real-time ETA to passengers. | [navsmart-bus-stop-portal.vercel.app](https://navsmart-bus-stop-portal.vercel.app/) |
+| **Backend API** | Secure Node.js middleware enforcing business logic and custom JWT authentication. | *Internal API Service (Render)* |
 
-## 🚀 Core Data Flow Example (Starting a Trip)
+## Core Data Flow Example (Starting a Trip)
 
 1. **Definition:** An admin creates a recurring schedule in the `admin-portal`. This fires an Axios POST to `/api/schedules` on the backend, writing to Supabase.
 2. **Expansion:** The driver opens the `driver-portal`. The frontend fetches the schedules, and a local Javascript algorithm expands that single schedule into multiple "virtual slots" (laps) based on interval timings.
