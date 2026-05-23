@@ -37,16 +37,16 @@ flowchart TD
 
 ## The Micro-Repositories
 
-This ecosystem is divided into specialized client applications. You can test the live deployments below.
+This ecosystem is divided into specialized applications based on user roles and hardware requirements. 
 
-| Portal | Primary Role | Live Link |
-| :--- | :--- | :--- |
-| **Admin Portal** | Command center for transit administrators to manage data and monitor live maps. | [navsmart-admin-portal.vercel.app](https://navsmart-admin-portal.vercel.app/) |
-| **Customer Portal** | Passenger web app for journey planning and QR ticket generation. | [navsmart-everything-portal.vercel.app](https://navsmart-everything-portal.vercel.app/#/) |
-| **Driver Portal** | App for drivers to start trips and view exact route polylines. | [navsmart-driver-portal.vercel.app](https://navsmart-driver-portal.vercel.app/) |
-| **Conductor Portal** | App for conductors to issue tickets and scan passenger QR codes. | [navsmart-conductor-portal.vercel.app](https://navsmart-conductor-portal.vercel.app/) |
-| **Bus Stop Signage** | Digital signage that auto-polls the API to display real-time ETA to passengers. | [navsmart-bus-stop-portal.vercel.app](https://navsmart-bus-stop-portal.vercel.app/) |
-| **Backend API** | Secure Node.js middleware enforcing business logic and custom JWT authentication. | *Internal API Service (Render)* |
+| Portal / Service | Primary Role | Source Code | Live Deployment |
+| :--- | :--- | :--- | :--- |
+| **Admin Portal** | Command center for transit administrators to manage data, schedules, and monitor live GIS overlaps. | [📂 `/admin-portal`](https://github.com/RoniMaity/navsmart-admin-portal) | [🔗 Launch App](https://navsmart-admin-portal.vercel.app/) |
+| **Passenger Portal** | Public web application for passengers to search routes, book tickets, and generate digital QR codes. | [📂 `/everything-portal`](https://github.com/RoniMaity/navsmart-everything-portal) | [🔗 Launch App](https://navsmart-everything-portal.vercel.app/#/) |
+| **Driver Portal** | Mobile interface for drivers to initiate linked/unlinked laps and follow live map navigation via OSRM. | [📂 `/driver-portal`](https://github.com/RoniMaity/navsmart-driver-portal) | [🔗 Launch App](https://navsmart-driver-portal.vercel.app/) |
+| **Conductor Portal** | Mobile tool utilizing device cameras to scan passenger QR codes and issue manual tickets dynamically. | [📂 `/conductor-portal`](https://github.com/RoniMaity/navsmart-conductor-portal) | [🔗 Launch App](https://navsmart-conductor-portal.vercel.app/) |
+| **Bus Stop Signage** | Unattended digital signage auto-polling real-time ETA and status to waiting passengers. | [📂 `/bus-stop-portal`](https://github.com/RoniMaity/navsmart-bus-stop-portal) | [🔗 Launch App](https://navsmart-bus-stop-portal.vercel.app/) |
+| **Backend API** | Secure Node.js middleware enforcing business logic and custom JWT authentication. | [📂 `/backend`](https://github.com/RoniMaity/navsmart-backend) | *Internal Service (Render)* |
 
 ## Core Data Flow Example (Starting a Trip)
 
