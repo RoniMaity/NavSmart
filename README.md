@@ -1,9 +1,12 @@
-# NavSmart: Smart Public Transit Ecosystem
+# NavSmart: Automated Transit & Route Management Ecosystem
 
-NavSmart is a comprehensive, multi-portal smart public transit management system. It coordinates real-time bus tracking, automated scheduling, mobile ticketing, and driver/conductor operations into a single unified platform.
+NavSmart is an enterprise-grade Automated Bus Scheduling and Route Management System. It was originally developed as a **Finalist solution for the Smart India Hackathon (SIH)**, specifically targeting the Delhi Transport Corporation's (DTC) operational bottlenecks.
 
-The entire system is powered by a centralized Node.js/Express backend that acts as an API gateway over a Supabase PostgreSQL database, with distinct Vue 3/Quasar frontends tailored for different user roles (admins, drivers, conductors, and passengers).
+The system replaces manual, resource-intensive logistics with a highly automated micro-frontend architecture. It specializes in two core transit problems:
+1. **Algorithmic Duty Scheduling:** Managing both *Linked* (fixed crew/bus) and *Unlinked* (dynamic handovers/rest periods) crew schedules.
+2. **GIS Route Management:** Utilizing real-world map data to map existing networks, draw new routes, and highlight geographical overlaps to reduce congestion.
 
+Powered by a centralized Node.js/Express API gateway and a Supabase PostgreSQL database, the ecosystem serves distinct Vue 3/Quasar frontends tailored for admins, drivers, conductors, and passengers.
 ## System Architecture
 
 ```mermaid
